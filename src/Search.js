@@ -1,19 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Search = (props) => {
-	const [location, setLocation] = useState();
-
-	const changeLocation = event => {
-		setLocation(event.target.value);
-	}
-
+const Search = props => {
 	return (
 		<>
 			<p>insert your location below</p>
-			<input type="text" id="location" name="location" onChange={changeLocation} />
+			<input type="text" id="location" name="location" onChange={props.handleChange} />
 			<button>go</button>
-
-			<p>{location}</p>
 		</>
 	);
 };

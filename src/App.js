@@ -1,11 +1,10 @@
 import './App.css';
-//import InputBar from "./InputBar.js";
-import Search from "./Search.js";
+import WeatherApp from './WeatherApp.js';
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <WeatherApp />
     </div>
   );
 }
