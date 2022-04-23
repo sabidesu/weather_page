@@ -5,7 +5,7 @@ const Search = props => {
 		<>
 			<p>insert your location below</p>
 			<input type="text" id="location" name="location" onChange={props.handleChange} />
-			<button>go</button>
+			<button onClick={props.search}>go</button>
 		</>
 	);
 };
