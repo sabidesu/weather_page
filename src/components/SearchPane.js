@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = props => {
+const SearchPane = props => {
 	return (
 		<>
 			<p>insert your location below</p>
@@ -10,4 +10,4 @@ const Search = props => {
 	);
 };
 
-export default Search;
+export default SearchPane;

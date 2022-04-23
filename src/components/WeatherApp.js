@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Search from './Search.js';
+import SearchPane from './SearchPane.js';
+import InfoPane from './InfoPane.js';
 
 const WeatherApp = props => {
 	const [location, setLocation] = useState();
@@ -14,14 +15,14 @@ const WeatherApp = props => {
 			.then(response => response.json())
 			.then(data => {
 				console.log(data);
-				setCoords(data);
+				setCoords([data[0].lat, data[0].lon]);
 			})
 	};
 
 	return (
 		<>
-			<Search handleChange={changeLocation} search={getCoords}/>
-			<p>{JSON.stringify(coords)}</p>
+			<SearchPane handleChange={changeLocation} search={getCoords} />
+			<InfoPane location={coords} />
 		</>
 	);
 };
