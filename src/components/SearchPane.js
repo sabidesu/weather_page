@@ -1,11 +1,13 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const SearchPane = props => {
 	return (
 		<>
 			<p>insert your location below</p>
-			<input type="text" id="location" name="location" onChange={props.handleChange} />
-			<button onClick={props.search}>go</button>
+			<TextField id='location' label='Location' variant='standard' onChange={props.handleChange} />
+			<Button variant='outlined' onClick={props.search}>GO</Button>
 		</>
 	);
 };
