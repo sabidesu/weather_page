@@ -21,7 +21,7 @@ const WeatherApp = props => {
 	return (
 		<>
 			<Search handleChange={changeLocation} search={getCoords}/>
-			<p>{location}</p>
+			<p>{JSON.stringify(coords)}</p>
 		</>
 	);
 };
