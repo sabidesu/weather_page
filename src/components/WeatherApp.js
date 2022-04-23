@@ -15,14 +15,14 @@ const WeatherApp = props => {
 			.then(response => response.json())
 			.then(data => {
 				console.log(data);
-				setCoords([data[0].lat, data[0].lon]);
+				setCoords({'lat': data[0].lat, 'lon': data[0].lon});
 			})
 	};
 
 	return (
 		<>
 			<SearchPane handleChange={changeLocation} search={getCoords} />
-			<InfoPane location={coords} />
+			{coords ? <InfoPane location={coords} /> : null}
 		</>
 	);
 };
