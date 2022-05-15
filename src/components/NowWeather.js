@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 const NowWeather = props => {
 	const [weatherData, setWeatherData] = useState();
@@ -15,14 +17,49 @@ const NowWeather = props => {
 	}, [props.location]);
 
 	if (weatherData) {
-		current = Math.round(weatherData.current.temp);
-		high = Math.round(weatherData.daily[0].temp.max);
-		low = Math.round(weatherData.daily[0].temp.min);
+		let current_temp = Math.round(weatherData.current.temp);
+		let high_temp = Math.round(weatherData.daily[0].temp.max);
+		let low_temp = Math.round(weatherData.daily[0].temp.min);
+
+		current = (
+			<>
+				<Typography variant="h6">current</Typography>
+				<Typography variant="body1">{current_temp}</Typography>
+			</>
+		)
+
+		high = (
+			<>
+				<Typography variant="h6">high</Typography>
+				<Typography variant="body1">{high_temp}</Typography>
+			</>
+		)
+
+		low = (
+			<>
+				<Typography variant="h6">low</Typography>
+				<Typography variant="body1">{low_temp}</Typography>
+			</>
+		)
 	}
 
 	return (
 		<>
-			<p>{weatherData ? current : null}</p>
+			<Typography variant="h4">now</Typography>
+		 	<Grid container spacing={2}>
+			 	<Grid item xs={3}>
+					
+				</Grid>
+				<Grid item xs={3}>
+					{current}
+				</Grid>
+				<Grid item xs={3}>
+					{high}
+				</Grid>
+				<Grid item xs={3}>
+					{low}
+				</Grid>
+			</Grid>
 		</>
 	);
 };
