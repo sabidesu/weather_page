@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 const WeatherApp = props => {
 	const [location, setLocation] = useState();
 	const [coords, setCoords] = useState();
+	const [weather, setWeather] = useState();
 
 	const changeLocation = event => {
 		setLocation(event.target.value);
@@ -18,8 +19,12 @@ const WeatherApp = props => {
 			.then(data => {
 				console.log(data);
 				setCoords({'lat': data[0].lat, 'lon': data[0].lon});
-			})
+			});
 	};
+
+	const saveWeather = (data) => {
+		setWeather(data);
+	}
 
 	return (
 		<>
@@ -27,7 +32,7 @@ const WeatherApp = props => {
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
 					<Grid item xs={5}>
-						{coords ? <NowWeather location={coords} /> : null}
+						{coords ? <NowWeather location={coords} saveWeather={saveWeather} /> : null}
 					</Grid>
 				</Grid>
 			</Box>
