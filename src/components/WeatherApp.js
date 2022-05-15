@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import SearchPane from './SearchPane.js';
 import InfoPane from './InfoPane.js';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 const WeatherApp = props => {
 	const [location, setLocation] = useState();
@@ -22,7 +25,13 @@ const WeatherApp = props => {
 	return (
 		<>
 			<SearchPane handleChange={changeLocation} search={getCoords} />
-			{coords ? <InfoPane location={coords} /> : null}
+			<Box sx={{flexGrow: 1}}>
+				<Grid container spacing={2}>
+					<Grid item xs={5}>
+						{coords ? <InfoPane location={coords} /> : null}
+					</Grid>
+				</Grid>
+			</Box>
 		</>
 	);
 };
