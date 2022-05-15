@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import SearchPane from './SearchPane.js';
-import InfoPane from './InfoPane.js';
+import NowWeather from './NowWeather.js';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 const WeatherApp = props => {
@@ -28,7 +27,7 @@ const WeatherApp = props => {
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
 					<Grid item xs={5}>
-						{coords ? <InfoPane location={coords} /> : null}
+						{coords ? <NowWeather location={coords} /> : null}
 					</Grid>
 				</Grid>
 			</Box>

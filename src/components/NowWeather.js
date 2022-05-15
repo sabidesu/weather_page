@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-const InfoPane = props => {
+const NowWeather = props => {
 	const [weatherData, setWeatherData] = useState();
 
 	useEffect(() => {
@@ -19,4 +19,4 @@ const InfoPane = props => {
 	);
 };
 
-export default InfoPane;
+export default NowWeather;
