@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+
 import SearchPane from './SearchPane.js';
 import NowWeather from './NowWeather.js';
+import DailyForecast from './DailyForecast.js';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
@@ -31,8 +34,11 @@ const WeatherApp = props => {
 			<SearchPane handleChange={changeLocation} search={getCoords} />
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
-					<Grid item xs={5}>
+					<Grid item xs={4}>
 						{coords ? <NowWeather location={coords} saveWeather={saveWeather} /> : null}
+					</Grid>
+					<Grid item xs={8}>
+						{weather ? <DailyForecast weather={weather} /> : null}
 					</Grid>
 				</Grid>
 			</Box>
