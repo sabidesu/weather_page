@@ -4,6 +4,7 @@ import SearchPane from './SearchPane.js';
 import NowWeather from './NowWeather.js';
 import DailyForecast from './DailyForecast.js';
 import HourlyForecast from './HourlyForecast.js';
+import News from './News.js';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -42,6 +43,9 @@ const WeatherApp = props => {
 					</Grid>
 					<Grid item xs={4}>
 						{weather ? <HourlyForecast weather={weather.hourly} /> : null}
+					</Grid>
+					<Grid item xs={8}>
+						<News />
 					</Grid>
 				</Grid>
 			</Box>
