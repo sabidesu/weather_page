@@ -18,11 +18,16 @@ const HourlyForecast = props => {
 const Hour = props => {
 	const date = new Date(props.weather.dt * 1000);
 	const time = date.getHours() + ":00";
+	const icon_src = `http://openweathermap.org/img/wn/${props.weather.weather[0].icon}.png`
+
 	return (
 		<>
 			<Grid container spacing={1}>
 				<Grid item xs={4}>
 					<Typography variant="h6">{time}</Typography>
+				</Grid>
+				<Grid item xs={4}>
+					<img src={icon_src} alt={props.weather.weather[0].description} />
 				</Grid>
 				<Grid item xs={4}>
 					<Typography variant="body1">{Math.round(props.weather.temp)}</Typography>
