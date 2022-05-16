@@ -42,13 +42,19 @@ const WeatherApp = props => {
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
 					<Grid item xs={5}>
-						<SearchPane handleChange={changeLocation} search={getCoords} />
-						{coords ? 
-						<Paper elevation={4}>
-							<NowWeather location={coords} saveWeather={saveWeather} /> 
-						</Paper> 
-						: null}
 						<Grid container spacing={2}>
+						 	<Grid item xs={12}>
+							 	<Paper elevation={4}>
+									<SearchPane handleChange={changeLocation} search={getCoords} />
+								</Paper>
+							</Grid>
+							<Grid item xs={12}>
+								{coords ? 
+								<Paper elevation={4}>
+									<NowWeather location={coords} saveWeather={saveWeather} /> 
+								</Paper> 
+								: null}
+							</Grid>
 							<Grid item xs={6}>
 								{weather ? 
 								<Paper elevation={4}>
