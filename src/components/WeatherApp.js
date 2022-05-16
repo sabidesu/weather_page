@@ -39,36 +39,38 @@ const WeatherApp = props => {
 		
 	return (
 		<>
-			<SearchPane handleChange={changeLocation} search={getCoords} />
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
-					<Grid item xs={4}>
+					<Grid item xs={5}>
+						<SearchPane handleChange={changeLocation} search={getCoords} />
 						{coords ? 
 						<Paper elevation={4}>
 							<NowWeather location={coords} saveWeather={saveWeather} /> 
 						</Paper> 
 						: null}
+						<Grid container spacing={2}>
+							<Grid item xs={6}>
+								{weather ? 
+								<Paper elevation={4}>
+									<DailyForecast weather={weather.daily} /> 
+								</Paper>
+								: null}
+							</Grid>
+							<Grid item xs={6}>
+								{weather ? 
+								<Paper elevation={4}>
+									<HourlyForecast weather={weather.hourly} /> 
+								</Paper>
+								: null}
+							</Grid>
+						</Grid>
 					</Grid>
-					<Grid item xs={8}>
-						{weather ? 
-						<Paper elevation={4}>
-							<DailyForecast weather={weather.daily} /> 
-						</Paper>
-						: null}
-					</Grid>
-					<Grid item xs={4}>
-						{weather ? 
-						<Paper elevation={4}>
-							<HourlyForecast weather={weather.hourly} /> 
-						</Paper>
-						: null}
-					</Grid>
-					<Grid item xs={8}>
-						{news ? 
-						<Paper elevation={4}>
-							<News news={news} /> 
-						</Paper>
-						: null}
+					<Grid item xs={7}>
+					{news ? 
+							<Paper elevation={4}>
+								<News news={news} /> 
+							</Paper>
+							: null}
 					</Grid>
 				</Grid>
 			</Box>
@@ -77,3 +79,21 @@ const WeatherApp = props => {
 };
 
 export default WeatherApp;
+
+/*
+<Box sx={{flexGrow: 1}}>
+				<Grid container spacing={2}>
+					<Grid item xs={4}>
+											</Grid>
+					<Grid item xs={8}>
+											</Grid>
+					<Grid item xs={4}>
+						
+					</Grid>
+					<Grid item xs={8}>
+						
+					</Grid>
+				</Grid>
+			</Box>
+
+*/
