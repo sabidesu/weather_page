@@ -22,10 +22,7 @@ const Hour = props => {
 
 	return (
 		<>
-			<Grid container spacing={1}>
-				<Grid item xs={3}>
-
-				</Grid>
+			<Grid container spacing={1} alignItems="center" justifyContent="center">
 				<Grid item xs={2}>
 					<Typography variant="subtitle1">{time}</Typography>
 				</Grid>

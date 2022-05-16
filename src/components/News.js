@@ -15,7 +15,7 @@ const Article = props => {
 	const hasImage = props.info.media.length !== 0;
 	return (
 		<>
-			<Grid container padding={2}>
+			<Grid container padding={2} alignItems="center">
 				{hasImage ? 
 				<Grid item xs={4}>
 					<img src={props.info.media[0]["media-metadata"][1].url} alt={props.info.media[0].copyright} /> 

@@ -38,10 +38,7 @@ const Day = props => {
 
 	return (
 		<>
-		 	<Grid container spacing={2}>
-			 	<Grid item xs={2}>
-
-				</Grid>
+		 	<Grid container spacing={2} alignItems="center" justifyContent="center">
 			 	<Grid item xs={2}>
 					<Typography variant="subtitle1">{short}</Typography>
 				</Grid>
