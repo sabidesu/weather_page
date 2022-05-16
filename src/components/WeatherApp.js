@@ -35,7 +35,7 @@ const WeatherApp = props => {
 				console.log(data);
 				setNews(data);
 			});
-	}, [location]);
+	}, []);
 		
 	return (
 		<>
@@ -66,11 +66,11 @@ const WeatherApp = props => {
 						</Grid>
 					</Grid>
 					<Grid item xs={7}>
-					{news ? 
-							<Paper elevation={4}>
-								<News news={news} /> 
-							</Paper>
-							: null}
+						{news ? 
+						<Paper elevation={4}>
+							<News news={news} /> 
+						</Paper>
+						: null}
 					</Grid>
 				</Grid>
 			</Box>
