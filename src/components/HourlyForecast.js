@@ -8,15 +8,15 @@ const HourlyForecast = props => {
 				const time = new Date(hour.dt * 1000);
 				return time.getDate() !== new Date(Date.now()).getDate();
 			})
-				.slice(7, 20)
+				.slice(8, 21)
 				.map((weatherInfo) => <Hour weather={weatherInfo} key={weatherInfo.dt}/>)}
 		</>
 	);
 }
 
 const Hour = props => {
-	const date = new Date(props.weather.dt);
-	const time = date.getHours() + ":" + date.getMinutes();
+	const date = new Date(props.weather.dt * 1000);
+	const time = date.getHours() + ":00";
 	return (
 		<>
 			<Typography variant="h6">{time}</Typography>

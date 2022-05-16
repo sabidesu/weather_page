@@ -8,8 +8,8 @@ const DailyForecast = props => {
 			<Grid container spacing={1}>
 				{props.weather.slice(1).map((weatherInfo) => {
 					return (
-						<Grid item xs={1}>
-							<Day weather={weatherInfo} key={weatherInfo.dt}/>
+						<Grid item xs={1} key={weatherInfo.dt}>
+							<Day weather={weatherInfo}/>
 						</Grid>
 					)
 				})}
