@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import SearchPane from './SearchPane.js';
 import NowWeather from './NowWeather.js';
 import DailyForecast from './DailyForecast.js';
+import HourlyForecast from './HourlyForecast.js';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -37,7 +38,10 @@ const WeatherApp = props => {
 						{coords ? <NowWeather location={coords} saveWeather={saveWeather} /> : null}
 					</Grid>
 					<Grid item xs={8}>
-						{weather ? <DailyForecast weather={weather} /> : null}
+						{weather ? <DailyForecast weather={weather.daily} /> : null}
+					</Grid>
+					<Grid item xs={4}>
+						{weather ? <HourlyForecast weather={weather.hourly} /> : null}
 					</Grid>
 				</Grid>
 			</Box>

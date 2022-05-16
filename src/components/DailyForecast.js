@@ -6,7 +6,7 @@ const DailyForecast = props => {
 		<>
 			<Typography variant="h4">daily</Typography>
 			<Grid container spacing={1}>
-				{props.weather.daily.slice(1).map((weatherInfo) => {
+				{props.weather.slice(1).map((weatherInfo) => {
 					return (
 						<Grid item xs={1}>
 							<Day weather={weatherInfo} key={weatherInfo.dt}/>
