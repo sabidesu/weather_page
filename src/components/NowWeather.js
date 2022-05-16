@@ -24,21 +24,21 @@ const NowWeather = props => {
 
 		current = (
 			<>
-				<Typography variant="subtitle1">current</Typography>
+				<Typography variant="overline">current</Typography>
 				<Typography variant="h5">{current_temp}</Typography>
 			</>
 		)
 
 		high = (
 			<>
-				<Typography variant="subtitle1">high</Typography>
+				<Typography variant="overline">high</Typography>
 				<Typography variant="h5">{high_temp}</Typography>
 			</>
 		)
 
 		low = (
 			<>
-				<Typography variant="subtitle1">low</Typography>
+				<Typography variant="overline">low</Typography>
 				<Typography variant="h5">{low_temp}</Typography>
 			</>
 		)
