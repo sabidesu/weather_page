@@ -43,16 +43,32 @@ const WeatherApp = props => {
 			<Box sx={{flexGrow: 1}}>
 				<Grid container spacing={2}>
 					<Grid item xs={4}>
-						{coords ? <NowWeather location={coords} saveWeather={saveWeather} /> : null}
+						{coords ? 
+						<Paper elevation={4}>
+							<NowWeather location={coords} saveWeather={saveWeather} /> 
+						</Paper> 
+						: null}
 					</Grid>
 					<Grid item xs={8}>
-						{weather ? <DailyForecast weather={weather.daily} /> : null}
+						{weather ? 
+						<Paper elevation={4}>
+							<DailyForecast weather={weather.daily} /> 
+						</Paper>
+						: null}
 					</Grid>
 					<Grid item xs={4}>
-						{weather ? <HourlyForecast weather={weather.hourly} /> : null}
+						{weather ? 
+						<Paper elevation={4}>
+							<HourlyForecast weather={weather.hourly} /> 
+						</Paper>
+						: null}
 					</Grid>
 					<Grid item xs={8}>
-						{news ? <News news={news} /> : null}
+						{news ? 
+						<Paper elevation={4}>
+							<News news={news} /> 
+						</Paper>
+						: null}
 					</Grid>
 				</Grid>
 			</Box>
