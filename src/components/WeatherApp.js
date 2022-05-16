@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import SearchPane from './SearchPane.js';
 import NowWeather from './NowWeather.js';
@@ -13,12 +13,9 @@ const WeatherApp = props => {
 	const [location, setLocation] = useState();
 	const [coords, setCoords] = useState();
 	const [weather, setWeather] = useState();
+	const [news, setNews] = useState();
 
-	let showNews = false;
-
-	const changeLocation = event => {
-		setLocation(event.target.value);
-	};
+	const changeLocation = event => setLocation(event.target.value);
 
 	const getCoords = () => {
 		fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${process.env.REACT_APP_api_key}`)
@@ -28,10 +25,17 @@ const WeatherApp = props => {
 			});
 	};
 
-	const saveWeather = (data) => {
-		setWeather(data);
-	}
+	const saveWeather = data => setWeather(data);
 
+	useEffect(() => {
+		fetch(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.REACT_APP_nyt_key}`)
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				setNews(data);
+			});
+	}, [location]);
+		
 	return (
 		<>
 			<SearchPane handleChange={changeLocation} search={getCoords} />
@@ -47,7 +51,7 @@ const WeatherApp = props => {
 						{weather ? <HourlyForecast weather={weather.hourly} /> : null}
 					</Grid>
 					<Grid item xs={8}>
-						<News />
+						{news ? <News news={news} /> : null}
 					</Grid>
 				</Grid>
 			</Box>
