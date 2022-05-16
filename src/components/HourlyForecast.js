@@ -1,4 +1,5 @@
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 const HourlyForecast = props => {
 	return (
@@ -19,7 +20,14 @@ const Hour = props => {
 	const time = date.getHours() + ":00";
 	return (
 		<>
-			<Typography variant="h6">{time}</Typography>
+			<Grid container spacing={1}>
+				<Grid item xs={4}>
+					<Typography variant="h6">{time}</Typography>
+				</Grid>
+				<Grid item xs={4}>
+					<Typography variant="body1">{Math.round(props.weather.temp)}</Typography>
+				</Grid>
+			</Grid>
 		</>
 	);
 }
