@@ -21,10 +21,12 @@ const DailyForecast = props => {
 const Day = props => {
 	const date = new Date(props.weather.dt * 1000); // js counts ms since epoch, not s 
 	const short = date.getMonth() + "/" + date.getDate();
+	const icon_src = `http://openweathermap.org/img/wn/${props.weather.weather[0].icon}.png`
 
 	return (
 		<>
 			<Typography variant="h6">{short}</Typography>
+			<img src={icon_src} alt={props.weather.weather[0].description} />
 			<Typography variant="body1">{Math.round(props.weather.temp.max)}</Typography>
 			<Typography variant="body1">{Math.round(props.weather.temp.min)}</Typography>
 		</>

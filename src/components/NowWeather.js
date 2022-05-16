@@ -17,10 +17,10 @@ const NowWeather = props => {
 	}, [props.location]);
 
 	if (weatherData) {
-		let current_temp = Math.round(weatherData.current.temp);
-		let high_temp = Math.round(weatherData.daily[0].temp.max);
-		let low_temp = Math.round(weatherData.daily[0].temp.min);
-		let icon_src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`
+		const current_temp = Math.round(weatherData.current.temp);
+		const high_temp = Math.round(weatherData.daily[0].temp.max);
+		const low_temp = Math.round(weatherData.daily[0].temp.min);
+		const icon_src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`
 
 		current = (
 			<>
