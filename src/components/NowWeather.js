@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 
 const NowWeather = props => {
 	const [weatherData, setWeatherData] = useState();
-	let current, high, low = null;
+	let current, high, low, icon = null;
 
 	useEffect(() => {
 		fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.location.lat}&lon=${props.location.lon}&exclude=minutely,alerts&units=imperial&appid=${process.env.REACT_APP_api_key}`)
@@ -20,6 +20,7 @@ const NowWeather = props => {
 		let current_temp = Math.round(weatherData.current.temp);
 		let high_temp = Math.round(weatherData.daily[0].temp.max);
 		let low_temp = Math.round(weatherData.daily[0].temp.min);
+		let icon_src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`
 
 		current = (
 			<>
@@ -41,6 +42,10 @@ const NowWeather = props => {
 				<Typography variant="body1">{low_temp}</Typography>
 			</>
 		)
+
+		icon = (
+			<img src={icon_src} alt={weatherData.current.weather[0].description} />
+		)
 	}
 
 	return (
@@ -48,7 +53,7 @@ const NowWeather = props => {
 			<Typography variant="h4">now</Typography>
 		 	<Grid container spacing={2}>
 			 	<Grid item xs={3}>
-					
+					{icon}
 				</Grid>
 				<Grid item xs={3}>
 					{current}
