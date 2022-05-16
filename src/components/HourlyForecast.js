@@ -27,16 +27,13 @@ const Hour = props => {
 
 				</Grid>
 				<Grid item xs={2}>
-					<Typography variant="h6">{time}</Typography>
+					<Typography variant="subtitle1">{time}</Typography>
 				</Grid>
 				<Grid item xs={2}>
 					<img src={icon_src} alt={props.weather.weather[0].description} />
 				</Grid>
 				<Grid item xs={2}>
-					<Typography variant="body1">{Math.round(props.weather.temp)}</Typography>
-				</Grid>
-				<Grid item xs={3}>
-
+					<Typography variant="h5">{Math.round(props.weather.temp)}</Typography>
 				</Grid>
 			</Grid>
 		</>
