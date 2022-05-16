@@ -24,7 +24,7 @@ const DailyForecast = props => {
 			</Grid>
 			{props.weather.slice(1).map((weatherInfo) => {
 				return (
-					<Day weather={weatherInfo}/>
+					<Day weather={weatherInfo} key={weatherInfo.dt} />
 				)
 			})}
 		</>
