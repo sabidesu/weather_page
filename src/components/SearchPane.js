@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const SearchPane = props => {
 	return (
 		<>
-			<Typography variant="body1">insert your location below</Typography>
+			<Typography variant="h6">insert your location below</Typography>
 			<TextField id='location' label='Location' variant='standard' onChange={props.handleChange} />
 			<Button variant='outlined' onClick={props.search}>GO</Button>
 		</>

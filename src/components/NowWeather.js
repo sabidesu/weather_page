@@ -52,17 +52,23 @@ const NowWeather = props => {
 		<>
 			<Typography variant="h4">now</Typography>
 		 	<Grid container spacing={2}>
-			 	<Grid item xs={3}>
+			  	<Grid item xs={2}>
+
+				</Grid>
+			 	<Grid item xs={2}>
 					{icon}
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item xs={2}>
 					{current}
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item xs={2}>
 					{high}
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item xs={2}>
 					{low}
+				</Grid>
+				<Grid item xs={2}>
+
 				</Grid>
 			</Grid>
 		</>
