@@ -14,6 +14,8 @@ const WeatherApp = props => {
 	const [coords, setCoords] = useState();
 	const [weather, setWeather] = useState();
 
+	let showNews = false;
+
 	const changeLocation = event => {
 		setLocation(event.target.value);
 	};
