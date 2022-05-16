@@ -22,9 +22,9 @@ const Article = props => {
 				</Grid>
 				: null}
 				<Grid item xs={hasImage ? 8 : 12}>
-					<Typography variant="h6">{props.info.title}</Typography>
-					<Typography variant="subtitle1">{props.info.byline}</Typography>
-					<Typography variant="body1">{props.info.abstract}</Typography>
+					<Typography variant="h6" align="left">{props.info.title}</Typography>
+					<Typography variant="subtitle1" align="left">{props.info.byline}</Typography>
+					<Typography variant="body1" align="left">{props.info.abstract}</Typography>
 					<Button variant="text" href={props.info.url}>Read More</Button>
 				</Grid>
 			</Grid>
