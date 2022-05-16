@@ -2,7 +2,6 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 const DailyForecast = props => {
-	console.log(props.weather.daily);
 	return (
 		<>
 			<Typography variant="h4">daily</Typography>
